@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Loja virtual</title>
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/icon.svg">
+  <!-- Ícone da loja: pinta já o último ícone conhecido DESTA loja (chave por endereço) enquanto o servidor responde.
+       js/loja-publica.js confirma/corrige logo a seguir (e repõe o padrão se a loja não tiver ícone). -->
+  <script>
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search), m = location.pathname.match(/\/loja\/([^/]+)/);
+        var slug = (p.get('s') || (m && decodeURIComponent(m[1])) || '').toLowerCase();
+        if (!slug) return;
+        var c = JSON.parse(localStorage.getItem('gef_lj_icon_' + slug) || 'null');
+        if (c && typeof c.icon === 'string' && c.icon.indexOf('https://') === 0) {
+          var l = document.querySelector('link[rel="icon"]'); l.setAttribute('href', c.icon); l.setAttribute('type', 'image/png');
+        }
+      } catch (e) { /* mantém o padrão */ }
+    })();
+  </script>
+  <link rel="stylesheet" href="./css/loja.css">
+</head>
+<body>
+  <div id="app" aria-live="polite"><div class="lj-boot">A carregar a loja…</div></div>
+  <script type="module" src="./js/loja-publica.js"></script>
+</body>
+</html>

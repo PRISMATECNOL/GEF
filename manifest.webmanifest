@@ -1,0 +1,20 @@
+{
+  "name": "GEF Gestão Financeira ERP",
+  "short_name": "GEF",
+  "description": "Gestão completa do seu negócio.",
+  "id": "./",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "pt-MZ",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    { "src": "assets/icons/pwa-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/pwa-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/pwa-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
